@@ -3,7 +3,7 @@ FROM java:8
 RUN echo "Asia/Chongqing" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 RUN mkdir /app
 RUN mkdir /app/logs
-ADD ../../../target/app.jar /app/app.jar
+ADD /app.jar /app/app.jar
 ADD runboot.sh /app/
 RUN bash -c 'touch /app/app.jar'
 WORKDIR /app
